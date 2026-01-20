@@ -1,0 +1,1112 @@
+{
+  "title": "Keycloak Metrics Dashboard",
+  "version": "v4",
+  "tags": [
+    "migrated",
+    "grafana"
+  ],
+  "layout": [
+    {
+      "h": 7,
+      "w": 6,
+      "x": 0,
+      "y": 0,
+      "i": "w_5",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 7,
+      "w": 6,
+      "x": 6,
+      "y": 0,
+      "i": "w_23",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 7,
+      "w": 12,
+      "x": 12,
+      "y": 0,
+      "i": "w_12",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 7,
+      "w": 6,
+      "x": 0,
+      "y": 7,
+      "i": "w_16",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 7,
+      "w": 6,
+      "x": 6,
+      "y": 7,
+      "i": "w_44",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 7,
+      "w": 6,
+      "x": 12,
+      "y": 7,
+      "i": "w_20",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 7,
+      "w": 6,
+      "x": 18,
+      "y": 7,
+      "i": "w_17",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 0,
+      "y": 14,
+      "i": "w_46",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 12,
+      "y": 14,
+      "i": "w_1",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 0,
+      "y": 22,
+      "i": "w_7",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 12,
+      "y": 22,
+      "i": "w_18",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 0,
+      "y": 30,
+      "i": "w_21",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 12,
+      "y": 30,
+      "i": "w_33",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 0,
+      "y": 38,
+      "i": "w_19",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 12,
+      "y": 38,
+      "i": "w_22",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 0,
+      "y": 46,
+      "i": "w_34",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 12,
+      "y": 46,
+      "i": "w_35",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 0,
+      "y": 54,
+      "i": "w_39",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 12,
+      "y": 54,
+      "i": "w_36",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 0,
+      "y": 62,
+      "i": "w_40",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 12,
+      "y": 62,
+      "i": "w_37",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 0,
+      "y": 70,
+      "i": "w_41",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 12,
+      "y": 70,
+      "i": "w_38",
+      "moved": false,
+      "static": false
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 0,
+      "y": 78,
+      "i": "w_42",
+      "moved": false,
+      "static": false
+    }
+  ],
+  "widgets": [
+    {
+      "id": "w_5",
+      "title": "Current Memory HEAP",
+      "panelTypes": "value",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum(jvm_memory_bytes_used{kubernetes_pod_name=\"$instance\", area=\"heap\"})*100/sum(jvm_memory_bytes_max{kubernetes_pod_name=\"$instance\", area=\"heap\"})"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "af588805-7d40-494f-912d-2a261d10869d",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_23",
+      "title": "Current Memory nonHEAP",
+      "panelTypes": "value",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum(jvm_memory_bytes_used{kubernetes_pod_name=\"$instance\", area=\"nonheap\"})*100/sum(jvm_memory_bytes_max{kubernetes_pod_name=\"$instance\", area=\"nonheap\"})"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "85d9fd32-56a2-4115-8cfe-ece818500002",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_12",
+      "title": "Memory Usage",
+      "panelTypes": "graph",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum(jvm_memory_bytes_max{kubernetes_pod_name=\"$instance\"})",
+          "sum(jvm_memory_bytes_committed{kubernetes_pod_name=\"$instance\"})",
+          "sum(jvm_memory_bytes_used{kubernetes_pod_name=\"$instance\"})"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "2a31fc03-d431-48e6-82af-2528b08c3bdc",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_16",
+      "title": "Logins Per REALM for past 24h",
+      "panelTypes": "graph",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum by (realm)(increase(keycloak_logins[24h]))"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "16e07c43-3010-44b8-96be-b182d4fb79fd",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_44",
+      "title": "Registrations Per REALM for past 24h",
+      "panelTypes": "graph",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum by (realm)(increase(keycloak_registrations[24h]))"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "9c154644-ae32-46c9-98b2-a3a47acf0626",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_20",
+      "title": "Logins Per CLIENT for past 24h",
+      "panelTypes": "graph",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum by (client_id)(increase(keycloak_logins[24h]))"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "5a84f679-aba8-450a-bb0f-57fc61efb486",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_17",
+      "title": "Registrations Per CLIENT for past 24h",
+      "panelTypes": "graph",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum by (client_id)(increase(keycloak_registrations[24h]))"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "af7fbefb-5ca9-400e-8e25-8f83b1e87a66",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_46",
+      "title": "4xx and 5xx Responses",
+      "panelTypes": "graph",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum by (code)(increase(keycloak_response_errors[30m]))"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "e3573b97-6b68-467c-befc-ee55cf4dc321",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_1",
+      "title": "Logins per REALM",
+      "panelTypes": "graph",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum by (realm)(increase(keycloak_logins[30m]))"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "7c76ba2a-2268-4136-b9cf-69e1e0f03284",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_7",
+      "title": "Login Errors on realm $realm",
+      "panelTypes": "graph",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum by (error) (increase(keycloak_failed_login_attempts{provider=\"keycloak\",realm=\"$realm\"}[30m]))",
+          "sum by (realm) (increase(keycloak_failed_login_attempts{provider=\"keycloak\",realm=\"dialog-test\"} [30m]))"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "efc44958-18c6-45ff-a031-e692b01e771c",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_18",
+      "title": "Logins per CLIENT on realm $realm",
+      "panelTypes": "graph",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum by (client_id)(increase(keycloak_logins{realm=\"$realm\",provider=\"keycloak\"}[30m]))"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "0efea6d0-0f3e-4534-b12a-8e31e1250c28",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_21",
+      "title": "Registration Errors on realm $realm",
+      "panelTypes": "graph",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum by (realm) (increase(keycloak_registrations_errors{provider=\"keycloak\",realm=\"$realm\"} [30m]))",
+          "sum by (error) (increase(keycloak_registrations_errors{provider=\"keycloak\",realm=\"$realm\"} [30m]))"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "054b479e-8bb5-4177-b059-94203fb3c6de",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_33",
+      "title": "Registrations per REALM",
+      "panelTypes": "graph",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum by (realm)(increase(keycloak_registrations[30m]))"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "ab10ed86-bb09-41a7-95e7-5f130e54712a",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_19",
+      "title": "Login Errors for $ClientId",
+      "panelTypes": "graph",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum by (error) (increase(keycloak_failed_login_attempts{provider=\"keycloak\",realm=\"$realm\",client_id=\"$ClientId\"}[30m]))"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "0cdea6ee-2df5-4816-872f-a66986965146",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_22",
+      "title": "Registrations per CLIENT on relm $realm",
+      "panelTypes": "graph",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum by (client_id)(increase(keycloak_registrations{realm=\"$realm\",provider=\"keycloak\"}[30m]))",
+          "sum by (realm)(increase(keycloak_registrations{provider=\"keycloak\",realm=\"$realm\"} [30m]))"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "14fdd990-aee4-47a3-8c97-091e749a4895",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_34",
+      "title": "Registration Errors for $ClientId",
+      "panelTypes": "graph",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum by (error) (increase(keycloak_registrations_errors{provider=\"keycloak\",realm=\"$realm\",client_id=\"$ClientId\"}[30m]))"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "57990f52-c5df-4675-80be-b2f0d23488a1",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_35",
+      "title": "Request duration method = \"GET\" Heatmap",
+      "panelTypes": "histogram",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum(increase(keycloak_request_duration_bucket{method=\"GET\"}[30m])) by (le)"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "6e1e5aba-7181-4672-9abb-2e73b1956678",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_39",
+      "title": "Percentage of requests \"GET\"  method  was served in 100ms or below",
+      "panelTypes": "value",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum(rate(keycloak_request_duration_bucket{method=\"GET\", le=\"100.0\"}[30m])) / sum(rate(keycloak_request_duration_count{method=\"GET\"}[30m])) * 100"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "51d52fb3-d7a5-45f4-965b-7f59d989a6aa",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_36",
+      "title": "Request duration method = \"POST\" Heatmap",
+      "panelTypes": "histogram",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum(increase(keycloak_request_duration_bucket{method=\"POST\"}[30m])) by (le)"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "ecc49c45-0e88-4d52-8855-e35ead911561",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_40",
+      "title": "Percentage of requests \"POST\"  method  was served in 100ms or below",
+      "panelTypes": "value",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum(rate(keycloak_request_duration_bucket{method=\"POST\", le=\"100.0\"}[30m])) / sum(rate(keycloak_request_duration_count{method=\"POST\"}[30m])) * 100"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "c01fa6e5-8270-49c9-ac39-70a417960d2a",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_37",
+      "title": "Request duration method = \"HEAD\" Heatmap",
+      "panelTypes": "histogram",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum(increase(keycloak_request_duration_bucket{method=\"HEAD\"}[30m])) by (le)"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "e27c82c8-0a5a-45e3-beb0-8b9000ab3528",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_41",
+      "title": "Percentage of requests \"HEAD\"  method  was served in 100ms or below",
+      "panelTypes": "value",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum(rate(keycloak_request_duration_bucket{method=\"HEAD\", le=\"100.0\"}[30m])) / sum(rate(keycloak_request_duration_count{method=\"HEAD\"}[30m])) * 100"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "6248f40d-44e0-47a3-8d11-98bb5de31a2b",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_38",
+      "title": "Request duration method = \"PUT\" Heatmap",
+      "panelTypes": "histogram",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum(increase(keycloak_request_duration_bucket{method=\"PUT\"}[30m])) by (le)"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "5faf5c31-031c-4492-b134-d476f6eda2a0",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_42",
+      "title": "Percentage of requests \"PUT\"  method  was served in 100ms or below",
+      "panelTypes": "value",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum(rate(keycloak_request_duration_bucket{method=\"PUT\", le=\"100.0\"}[30m])) / sum(rate(keycloak_request_duration_count{method=\"PUT\"}[30m])) * 100"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "clickhouse_sql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "id": "a3c8762a-0f66-43e1-a3bd-3817ddf33162",
+        "promql": [
+          {
+            "disabled": false,
+            "legend": "",
+            "name": "A",
+            "query": ""
+          }
+        ],
+        "queryType": "builder"
+      }
+    }
+  ],
+  "variables": {
+    "140898eb-42e0-4d34-b2a7-6048c385eb4d": {
+      "allSelected": false,
+      "customValue": "",
+      "description": "",
+      "id": "140898eb-42e0-4d34-b2a7-6048c385eb4d",
+      "modificationUUID": "ffb12e59-4d15-4c06-948c-41501fd9a008",
+      "multiSelect": false,
+      "name": "Datasource",
+      "order": 0,
+      "queryValue": "prometheus",
+      "showALLOption": false,
+      "sort": "DISABLED",
+      "textboxValue": "",
+      "type": "DATASOURCE"
+    },
+    "74826a28-b52f-451a-9c75-cf7300ebe141": {
+      "allSelected": false,
+      "customValue": "",
+      "description": "ClientId",
+      "id": "74826a28-b52f-451a-9c75-cf7300ebe141",
+      "modificationUUID": "44eb6ab4-efe0-43aa-8333-32ba21c8919e",
+      "multiSelect": false,
+      "name": "ClientId",
+      "order": 3,
+      "queryValue": "label_values(keycloak_logins{provider=\"keycloak\",realm=\"$realm\"},client_id)",
+      "showALLOption": false,
+      "sort": "DISABLED",
+      "textboxValue": "",
+      "type": "QUERY"
+    },
+    "f8351153-98b6-488d-ab21-20dcc5189567": {
+      "allSelected": false,
+      "customValue": "",
+      "description": "Instance",
+      "id": "f8351153-98b6-488d-ab21-20dcc5189567",
+      "modificationUUID": "d6d415e5-42a9-4a38-bb63-914da174c2ee",
+      "multiSelect": false,
+      "name": "instance",
+      "order": 1,
+      "queryValue": "label_values(keycloak_logins,kubernetes_pod_name)",
+      "showALLOption": false,
+      "sort": "DISABLED",
+      "textboxValue": "",
+      "type": "QUERY"
+    },
+    "fd1c1a6a-5366-4e65-ad12-91a2c96cc1e5": {
+      "allSelected": false,
+      "customValue": "",
+      "description": "Realm",
+      "id": "fd1c1a6a-5366-4e65-ad12-91a2c96cc1e5",
+      "modificationUUID": "d96d486c-8922-45dd-9431-8c6137004353",
+      "multiSelect": false,
+      "name": "realm",
+      "order": 2,
+      "queryValue": "label_values(keycloak_logins{provider=\"keycloak\"},realm)",
+      "showALLOption": false,
+      "sort": "DISABLED",
+      "textboxValue": "",
+      "type": "QUERY"
+    }
+  },
+  "description": "Converted from Grafana dashboard JSON"
+}

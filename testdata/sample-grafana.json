@@ -1,0 +1,54 @@
+{
+  "title": "Sample Grafana Dashboard",
+  "uid": "abc123",
+  "templating": {
+    "list": [
+      {
+        "name": "job",
+        "type": "query",
+        "label": "Job",
+        "query": "label_values(up, job)",
+        "multi": true
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "timeseries",
+      "title": "CPU Usage",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+      "targets": [
+        {"refId": "A", "expr": "rate(process_cpu_seconds_total[5m])"}
+      ]
+    },
+    {
+      "id": 2,
+      "type": "table",
+      "title": "Instances",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+      "targets": [
+        {"refId": "A", "expr": "sum(up) by (instance)"}
+      ]
+    },
+    {
+      "id": 3,
+      "type": "piechart",
+      "title": "HTTP Codes",
+      "gridPos": {"h": 8, "w": 8, "x": 0, "y": 8},
+      "targets": [
+        {"refId": "A", "expr": "sum(rate(http_requests_total[5m])) by (code)"}
+      ]
+    },
+    {
+      "id": 4,
+      "type": "stat",
+      "title": "Errors %",
+      "gridPos": {"h": 4, "w": 8, "x": 8, "y": 8},
+      "targets": [
+        {"refId": "A", "expr": "(sum(rate(http_requests_total{code=~\"5..\"}[5m])) / sum(rate(http_requests_total[5m]))) * 100"}
+      ]
+    }
+  ]
+}
+

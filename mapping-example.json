@@ -1,0 +1,20 @@
+{
+  "panelTypeMap": {
+    "timeseries": "graph",
+    "graph": "graph",
+    "barchart": "bar",
+    "bar-gauge": "bar",
+    "piechart": "pie",
+    "table": "table",
+    "stat": "value",
+    "gauge": "value",
+    "histogram": "histogram",
+    "logs": "list"
+  },
+  "defaultPanel": "graph",
+  "defaultWidth": 8,
+  "defaultHeight": 6,
+  "queryReplacements": [
+    {"match": "\\[5m\\]", "replacement": "[1m]"}
+  ]
+}

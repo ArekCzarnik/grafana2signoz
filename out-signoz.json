@@ -1,0 +1,119 @@
+{
+  "title": "Sample Grafana Dashboard",
+  "version": 1,
+  "tags": [
+    "migrated",
+    "grafana"
+  ],
+  "layout": [
+    {
+      "h": 8,
+      "w": 12,
+      "x": 0,
+      "y": 0,
+      "i": "w_1"
+    },
+    {
+      "h": 8,
+      "w": 12,
+      "x": 12,
+      "y": 0,
+      "i": "w_2"
+    },
+    {
+      "h": 8,
+      "w": 8,
+      "x": 0,
+      "y": 8,
+      "i": "w_3"
+    },
+    {
+      "h": 4,
+      "w": 8,
+      "x": 8,
+      "y": 8,
+      "i": "w_4"
+    }
+  ],
+  "widgets": [
+    {
+      "id": "w_1",
+      "title": "CPU Usage",
+      "panelTypes": "timeseries",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "rate(process_cpu_seconds_total[5m])"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_2",
+      "title": "Instances",
+      "panelTypes": "table",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum(up) by (instance)"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_3",
+      "title": "HTTP Codes",
+      "panelTypes": "pie",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "sum(rate(http_requests_total[5m])) by (code)"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "queryType": "builder"
+      }
+    },
+    {
+      "id": "w_4",
+      "title": "Errors %",
+      "panelTypes": "value",
+      "timePreferance": "GLOBAL_TIME",
+      "description": "Migrated from Grafana; original queries preserved in _grafanaExprs.",
+      "query": {
+        "_grafanaExprs": [
+          "(sum(rate(http_requests_total{code=~\"5..\"}[5m])) / sum(rate(http_requests_total[5m]))) * 100"
+        ],
+        "builder": {
+          "queryData": [],
+          "queryFormulas": []
+        },
+        "queryType": "builder"
+      }
+    }
+  ],
+  "variables": {
+    "job": {
+      "all": false,
+      "current": null,
+      "label": "Job",
+      "multi": true,
+      "query": "label_values(up, job)",
+      "source": "grafana",
+      "type": "query"
+    }
+  }
+}
