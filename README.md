@@ -13,6 +13,19 @@
 - Directory → Directory: `./grafana2signoz convert --input grafana-dasboards --output converted-signoz`
 - Compare (Grafana vs. converted SigNoz): `./grafana2signoz compare --grafana grafana-dasboards/node-application.json --signoz converted-signoz/converted-node-application.json`
 
+**Features**
+- Panel‑Mappings (Default):
+  - timeseries/graph → graph
+  - barchart/bar-gauge → bar
+  - piechart/pie-chart → pie
+  - table → table
+  - stat/gauge/singlestat → value
+  - histogram/heatmap → histogram
+  - logs → list
+  - Fallback → graph
+- Variables aus Grafana werden als SigNoz‑Variablenobjekte (UUID‑Keys) übernommen.
+- Leichte Schema‑Validierung für die generierte Ausgabe.
+
 **How it works**
 - Parses Grafana JSON (title, variables, panels, targets).
 - Maps Grafana panel types to SigNoz panel types (Graph, Bar, Pie, Table, Value, Histogram, List). Unsupported types fall back to `graph`.
@@ -31,3 +44,13 @@
 **References**
 - Migration guide: signoz.io/docs/migration/migrate-from-grafana/dashboards/
 - Panel types: signoz.io/docs/dashboards/panel-types/
+
+**Makefile**
+- `make build` — baut die CLI unter `bin/grafana2signoz`.
+- `make install` — installiert die CLI in `$GOBIN`.
+- `make test` — führt `go test ./...` aus.
+- `make fmt` — formatiert Quellcode (`go fmt ./...`).
+- `make vet` — statische Analyse (`go vet ./...`).
+- `make cover` — erzeugt Coverage‑Report (`coverage.out`).
+- `make convert IN=<path> OUT=<dir> [RULES=<file>]` — führt eine Konvertierung aus.
+- `make compare GRAFANA=<file> SIGNOZ=<file> [RULES=<file>]` — vergleicht Grafana vs. SigNoz.

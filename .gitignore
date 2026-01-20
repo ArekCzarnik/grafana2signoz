@@ -1,0 +1,5 @@
+/bin/grafana2signoz
+.idea
+/logs/*
+/prompt.md
+/prompt2.md
